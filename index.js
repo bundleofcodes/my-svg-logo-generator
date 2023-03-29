@@ -2,16 +2,16 @@ const fs = require('./node_modules/graceful-fs/graceful-fs')
 const inquirer = require("inquirer");
 const {Circle, Square, Triangle} = require("./lib/shapes");
 
-class svg {
+class Svg {
     constructor() {
         this.texElement = ''
         this.shapeElement = ''
     }
     render(){
-    return `<svg version=1.1" xmlns="http://wwww.w3/200.svg" width="300px" fill="${color}`;
+    return `<svg version="1.1" xmlns="http://wwww.w3/2000.svg" width="300" height="200">${this.shapeElement}${this.texElement}</svg>`
     }
     setTextElement(text,color) {
-        this.setTextElement = `<text x="150" y="125" font-size="60"`;
+        this.setTextElement = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${text}</text>`
     }
     setShapeElement(shape) {
         this.shapeElement = shape.render()
@@ -34,13 +34,13 @@ const questions = [
     {
         type: "list",
         name: "pixel-image",
-        message: "Which Pixel-Image would you like to use?",
+        message: "Which Pixel Image would you like to use?",
         choices: ["Circle", "Square","Triangle"],
     },
     {
         type: "input",
         name: "shape",
-        message: "SHAPE COLOR: Enter a color keyword (OR a hexidecimal number):",
+        message: "SHAPE-COLOR: Enter a color keyword (OR a hexidecimal number):",
     },
     
 ];
