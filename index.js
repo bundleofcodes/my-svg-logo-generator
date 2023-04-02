@@ -8,7 +8,13 @@ class Svg {
         this.shapeElement = ''
     }
     render(){
-    return `<svg version="1.1" xmlns="http://wwww.w3/2000.svg" width="300" height="200">${this.shapeElement}${this.texElement}</svg>`
+    return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg%22%3E">
+
+    <circle cx="150" cy="100" r="80" fill="green"/>
+  
+    <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
+  
+  </svg>${this.shapeElement}${this.texElement}</svg>`
     }
     setTextElement(text,color) {
         this.setTextElement = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${text}</text>`
@@ -46,9 +52,9 @@ const questions = [
 ];
 
 //Function to write files//
-function writeToFile(fileName, data) {
-    console.log("writing [" + data + ") to file [" + fileName + "]")
-    fs.writeFile(fileName, data, function (err) {
+function writeToFile(data) {
+    console.log("writing [" + data + ") to file Output")
+    fs.writeFile("./output/logo.svg", data, function (err) {
         if (err) {
             return console.log(err);
         } 
@@ -59,7 +65,6 @@ function writeToFile(fileName, data) {
 async function init() {
     console.log("starting init");
     var svgString = "";
-    var svg_file = "logo.svg";
 
 //Prompt the user for answers//
 const answers = await inquirer.prompt(questions);
@@ -115,7 +120,7 @@ var svg = new Svg();
     
     console.log("Your shape has been generated!");
     console.log("Writing shape to file...");
-    writeToFile(svg_file, svgString);
+    writeToFile(svgString);
 
 }
 init()
