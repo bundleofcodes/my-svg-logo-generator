@@ -16,8 +16,8 @@ The purpose of this project was to create an application that enables users to e
 
 - Application Screenshot:
 
-- ![Application Screenshot](./README%20preview%20Screenshot.png)
+- ![Application Screenshot](./)
 
-- [Repository URL](https://github.com/bundleofcodes/pro-README.md-generator)
+- [Repository URL](https://github.com/bundleofcodes/my-svg-logo-generator)
 
 
