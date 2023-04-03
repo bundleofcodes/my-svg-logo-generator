@@ -33,6 +33,7 @@ The purpose of this project was to create an application that enables users to e
 ## License:
 
 MIT License
+- [MIT License link](https://github.com/bundleofcodes/my-svg-logo-generator/blob/main/LICENSE)
 
 ## Tests:
 
